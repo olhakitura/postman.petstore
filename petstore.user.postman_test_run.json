@@ -1,0 +1,215 @@
+{
+	"id": "d981455b-631e-4e77-8a70-7fb228b9b0bd",
+	"name": "petstore.user",
+	"timestamp": "2022-02-04T16:19:57.998Z",
+	"collection_id": "12195617-960667a7-47ac-49f4-82ad-567fec716a71",
+	"folder_id": 0,
+	"environment_id": "1474d9ee-e5b9-4838-a29f-abb63c0de026",
+	"totalPass": 10,
+	"totalFail": 2,
+	"results": [
+		{
+			"id": "9c211fa9-ee4c-4188-b5cb-2d8447091828",
+			"name": "CREATE USER",
+			"url": "https://petstore.swagger.io/v2/user",
+			"time": 292,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": false,
+				"Successful POST request": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Successful POST request": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				292
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": false,
+					"Successful POST request": false
+				}
+			]
+		},
+		{
+			"id": "7e1d205e-5953-473e-9ddf-8df2bd0f3b86",
+			"name": "UPDATE USER",
+			"url": "https://petstore.swagger.io/v2/user/%22nukubi%22",
+			"time": 142,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				142
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "3412a410-752b-4ad6-b288-7639023109fe",
+			"name": "CHECK IF USER IS UPDATED",
+			"url": "https://petstore.swagger.io/v2/user/nukubi1",
+			"time": 141,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": true,
+				"Body contains string": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				141
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true,
+					"Body contains string": true
+				}
+			]
+		},
+		{
+			"id": "0460ee1a-9a7b-4b8a-9b08-679be8e915cb",
+			"name": "DELETE USER",
+			"url": "https://petstore.swagger.io/v2/user/nukubi1",
+			"time": 143,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 200ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 200ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				143
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 200ms": true
+				}
+			]
+		},
+		{
+			"id": "dedb21be-7e26-445a-9819-98a36cb14065",
+			"name": "CHECK IF USER DELETED",
+			"url": "https://petstore.swagger.io/v2/user/nukubi1",
+			"time": 143,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true,
+				"Check if User Not Found": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check if User Not Found": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				143
+			],
+			"allTests": [
+				{
+					"Status code is 404": true,
+					"Check if User Not Found": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 861,
+	"collection": {
+		"requests": [
+			{
+				"id": "9c211fa9-ee4c-4188-b5cb-2d8447091828",
+				"method": "POST"
+			},
+			{
+				"id": "7e1d205e-5953-473e-9ddf-8df2bd0f3b86",
+				"method": "PUT"
+			},
+			{
+				"id": "3412a410-752b-4ad6-b288-7639023109fe",
+				"method": "GET"
+			},
+			{
+				"id": "0460ee1a-9a7b-4b8a-9b08-679be8e915cb",
+				"method": "DELETE"
+			},
+			{
+				"id": "dedb21be-7e26-445a-9819-98a36cb14065",
+				"method": "GET"
+			}
+		]
+	}
+}

@@ -1,0 +1,398 @@
+{
+	"info": {
+		"_postman_id": "960667a7-47ac-49f4-82ad-567fec716a71",
+		"name": "petstore.user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE USER",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 0,\n  \"username\": {{username}},\n  \"firstName\": {{firstName}} ,\n  \"lastName\": {{lastName}},\n  \"email\": {{lastName}},\n  \"password\": {{password}},\n  \"phone\": {{phone}},\n  \"userStatus\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrlScopeCollection}}/user",
+					"host": [
+						"{{baseUrlScopeCollection}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE USER",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 0,\n  \"username\": {{usernameUpdated}},\n  \"firstName\": {{firstNameUpdated}},\n  \"lastName\": {{lastNameUpdated}},\n  \"email\": {{emailUpdated}},\n  \"password\": {{passwordUpdated}},\n  \"phone\": {{phoneUpdated}},\n  \"userStatus\": 0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrlScopeCollection}}/user/{{username}}",
+					"host": [
+						"{{baseUrlScopeCollection}}"
+					],
+					"path": [
+						"user",
+						"{{username}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CHECK IF USER IS UPDATED",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"pm.test(\"Body contains string\",() => {",
+							"  pm.expect(pm.response.text()).to.include(\"nukubi1\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlScopeCollection}}/user/{{usernameUpdatedForUrl}}",
+					"host": [
+						"{{baseUrlScopeCollection}}"
+					],
+					"path": [
+						"user",
+						"{{usernameUpdatedForUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE USER",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlScopeCollection}}/user/{{usernameUpdatedForUrl}}",
+					"host": [
+						"{{baseUrlScopeCollection}}"
+					],
+					"path": [
+						"user",
+						"{{usernameUpdatedForUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CHECK IF USER DELETED",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {",
+							"    pm.response.to.have.status(404);",
+							"});",
+							"pm.test(\"Check if User Not Found\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.eql(\"User not found\");",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "api_key",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrlScopeCollection}}/user/{{usernameUpdatedForUrl}}",
+					"host": [
+						"{{baseUrlScopeCollection}}"
+					],
+					"path": [
+						"user",
+						"{{usernameUpdatedForUrl}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrlScopeCollection",
+			"value": "https://petstore.swagger.io/v2",
+			"type": "string"
+		},
+		{
+			"key": "username",
+			"value": "\"nukubi\"",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "\"qwerty12345\"",
+			"type": "string"
+		},
+		{
+			"key": "lastName",
+			"value": "\"Kitura\"",
+			"type": "string"
+		},
+		{
+			"key": "firstName",
+			"value": "\"Olha\"",
+			"type": "string"
+		},
+		{
+			"key": "phone",
+			"value": "\"+380666666667\"",
+			"type": "string"
+		},
+		{
+			"key": "email",
+			"value": "\"okitura966@gmail.com\"",
+			"type": "string"
+		},
+		{
+			"key": "usernameUpdated",
+			"value": "\"nukubi1\"",
+			"type": "string"
+		},
+		{
+			"key": "passwordUpdated",
+			"value": "\"qwerty123456\"",
+			"type": "string"
+		},
+		{
+			"key": "lastNameUpdated",
+			"value": "\"Kiturak\"",
+			"type": "string"
+		},
+		{
+			"key": "firstNameUpdated",
+			"value": "\"Olya\"",
+			"type": "string"
+		},
+		{
+			"key": "phoneUpdated",
+			"value": "\"+380666666676\"",
+			"type": "string"
+		},
+		{
+			"key": "emailUpdated",
+			"value": "\"okitura6@gmail.com\"",
+			"type": "string"
+		},
+		{
+			"key": "usernameUpdatedForUrl",
+			"value": "nukubi1",
+			"type": "string"
+		},
+		{
+			"key": "usernameForUrl",
+			"value": "nukubi",
+			"type": "string"
+		}
+	]
+}
